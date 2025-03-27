@@ -1,18 +1,26 @@
 <h4>Hola a mi home</h4>
 <div class="container">
-    <h6>Lista de productos</h6>
+    <h6>Lista de clientes</h6>
     <table class="table table-bordered mt-4">
         <thead class="table-dark">
             <tr>
+                <th>Id</th>
                 <th>Nombre</th>
-                <th>Precio</th>
+                <th>Email</th>
+                <th>Telefono</th>
+                <th>Direccion</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <% productos.forEach(p => { %>
+            <% clientes.forEach(c => { %>
                 <tr>
-                    <td><%= p.nombre %></td>
-                    <td><%= p.precio %></td>
+                    <td><%= c.id_cliente %></td>
+                    <td><%= c.nombre %></td>
+                    <td><%= c.email %></td>
+                    <td><%= c.telefono %></td>
+                    <td><%= c.direccion %></td>
+                    <td><a href="/<%=c.id_cliente%>">Ver</a></td>
                 </tr>
             <% }); %>
         </tbody>

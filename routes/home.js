@@ -1,10 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const jhomeontroller = require('../controllers/home_controller')
 const homeController = require('../controllers/home_controller')
 
 
-router.get('/', homeController.getHome);
+router.get('/', homeController.getHome)
+
+router.get('/:id(\\d+)', homeController.getById)
 
 router.post('/', homeController.addHome)
 

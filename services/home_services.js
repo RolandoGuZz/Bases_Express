@@ -1,28 +1,31 @@
+const Cliente = require('../models/clientes')
+
 const homeService = {
-    getDataHome: () => {
-        const productos = [
-            {
-                nombre: 'Gallina 1',
-                precio: 10.45
-            },
-            {
-                nombre: 'Gallina 2',
-                precio: 10.46
-            },
-            {
-                nombre: 'Gallina 3',
-                precio: 10.47
-            },
-            {
-                nombre: 'Gallina 4',
-                precio: 10.48
-            }
-        ]
-        return productos
+    getDataHome: async () => {
+        try {
+            const data = await Cliente.findAll();
+            return { msg: null, data };
+        } catch (error) {
+            return { msg: error, data: [] };
+        }
+
     },
 
-    addItem: () => {
-        
+    getUserById: async (id) => {
+        try {
+            const clientes = await Cliente.findOne({
+                where: {
+                    id_cliente: id
+                }
+            });
+            return { msg: null, data: clientes };
+        } catch (error) {
+            return { msg: null, data: [] };
+        }
+    },
+
+    addItem: (req, res) => {
+
     }
 }
 

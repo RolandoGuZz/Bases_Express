@@ -17,6 +17,6 @@ Cliente.init(
         telefono: DataTypes.STRING,
         direccion: DataTypes.STRING
     },
-    { sequelize, modelName: 'Cliente', tableName: 'clientes' })
+    { sequelize, modelName: 'Cliente', tableName: 'clientes', timestamps: false })
 
 module.exports = Cliente

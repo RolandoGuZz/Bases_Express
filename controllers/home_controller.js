@@ -4,7 +4,6 @@ const homeController = {
     getHome: async (req, res) => {
         try {
             const resp = await homeService.getDataHome();
-            console.log(resp.data)
             if (!resp.msg) {
                 return res.render('home/index', { titulo: "Bienvenidos a mi sitio ", clientes: resp.data });
             }
@@ -16,6 +15,7 @@ const homeController = {
 
     getById: async (req, res) => {
         try {
+            console.log('req',req.params);
             const { id } = req.params;
             const resp = await homeService.getUserById(id);
             return res.render('home/show', {titulo: 'Show user', clientes: resp.data})

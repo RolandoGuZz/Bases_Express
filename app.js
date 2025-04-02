@@ -4,7 +4,8 @@ const app = express();
 const morgan = require('morgan');
 const path = require('path');
 const express_layout = require('express-ejs-layouts');
-const sequelize = require('./db/database')
+const sequelize = require('./db/database');
+require('dotenv').config();
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))

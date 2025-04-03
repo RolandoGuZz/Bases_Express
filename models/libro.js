@@ -10,13 +10,13 @@ Libro.init(
             primaryKey: true,
             autoIncrement: true
         },
-        nombre: {
+        titulo: {
             type: DataTypes.STRING
         },
-        descripcion: DataTypes.STRING,
-        precio: DataTypes.DOUBLE,
-        stock: DataTypes.INTEGER
+        autor: DataTypes.STRING,
+        genero: DataTypes.STRING,
+        publicacion: DataTypes.INTEGER
     },
-    { sequelize, modelName: 'Libro' })
+    { sequelize, modelName: 'Libro', timestamps: false })
 
 module.exports = Libro

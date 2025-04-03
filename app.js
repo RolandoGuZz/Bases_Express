@@ -13,6 +13,7 @@ app.set('layout', 'layouts/layout');
 
 //middlewares
 app.use(express_layout)
+app.use(express.json());
 app.use('/', routes)
 app.use(morgan('dev'))
 app.use(express.static(path.join(__dirname, 'static')))

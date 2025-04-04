@@ -4,12 +4,13 @@ const bookController = {
     addBook: async (req, res) => {
         try {
             const { titulo, autor, genero, publicacion } = req.body;
-            await bookService.createBook({
+            const libro = await bookService.createBook({
                 titulo,
                 autor,
                 genero,
                 publicacion
             });
+            return res.send(libro);
         } catch (error) {
             console.log(error);
         }
